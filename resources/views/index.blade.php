@@ -69,7 +69,13 @@
         <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12.206.793c.99 0 4.347.276 6.052 3.99.053.126.09.266.09.398v5.808l.002.06c.01.135.108.24.24.26l.003.001c.217.04.427-.08.527-.27l.007-.012.003-.006.004-.006a3.17 3.17 0 0 1 2.762-1.617 3.18 3.18 0 0 1 3.18 3.18 3.18 3.18 0 0 1-3.18 3.18c-.176 0-.35-.016-.52-.047l-.03-.006a.49.49 0 0 0-.55.353l-.001.004c-.208.684-.787 2.397-2.108 3.94-1.33 1.55-3.222 2.96-6.19 2.96-2.967 0-4.857-1.408-6.186-2.96-1.321-1.543-1.9-3.256-2.108-3.94l-.001-.004a.49.49 0 0 0-.55-.353l-.03.006a3.161 3.161 0 0 1-.52.047A3.18 3.18 0 0 1 0 14.362a3.18 3.18 0 0 1 3.18-3.18c1.116 0 2.094.575 2.662 1.442l.007.012.003.005.004.006c.1.19.31.31.527.27l.003-.001a.273.273 0 0 0 .24-.26l.002-.06V5.181c0-.132.037-.272.09-.398C8.522 1.07 11.218.793 12.206.793z"/></svg>
       </div>
       <div class="float-icon icon-ga" style="border-radius:14px; padding: 4px;">
-        <svg width="34" height="34" viewBox="0 0 192 192" fill="none"><path d="M96 176c-44.183 0-80-35.817-80-80s35.817-80 80-80 80 35.817 80 80-35.817 80-80 80z" fill="#FBBC04"/><path d="M137.31 66.2L111.63 91.88l-16.38-16.38L121 49.82A55.79 55.79 0 0 1 137.31 66.2z" fill="#EA4335"/><path d="M54.69 125.8L80.37 100.12l16.38 16.38L71 142.18A55.79 55.79 0 0 1 54.69 125.8z" fill="#34A853"/><path d="M96 40a56 56 0 0 1 41 17.89l-50.62 50.62-16.38-16.38L116.38 46A55.52 55.52 0 0 0 96 40z" fill="#4285F4"/><path d="M96 152a56 56 0 0 1-41-17.89l50.62-50.62 16.38 16.38L75.62 146A55.52 55.52 0 0 0 96 152z" fill="#34A853"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="34px" height="34px">
+            <polygon fill="#ffc107" points="30.129,15.75 18.871,9.25 5.871,31.25 17.129,37.75"/>
+            <path fill="#1e88e5" d="M31.871,37.75c1.795,3.109,5.847,4.144,8.879,2.379c3.103-1.806,4.174-5.77,2.379-8.879l-13-22c-1.795-3.109-5.835-4.144-8.879-2.379c-3.106,1.801-4.174,5.77-2.379,8.879L31.871,37.75z"/>
+            <circle cx="11.5" cy="34.5" r="6.5" fill="#43a047"/>
+          </svg>
+        <!--
+        <svg width="34" height="34" viewBox="0 0 192 192" fill="none"><path d="M96 176c-44.183 0-80-35.817-80-80s35.817-80 80-80 80 35.817 80 80-35.817 80-80 80z" fill="#FBBC04"/><path d="M137.31 66.2L111.63 91.88l-16.38-16.38L121 49.82A55.79 55.79 0 0 1 137.31 66.2z" fill="#EA4335"/><path d="M54.69 125.8L80.37 100.12l16.38 16.38L71 142.18A55.79 55.79 0 0 1 54.69 125.8z" fill="#34A853"/><path d="M96 40a56 56 0 0 1 41 17.89l-50.62 50.62-16.38-16.38L116.38 46A55.52 55.52 0 0 0 96 40z" fill="#4285F4"/><path d="M96 152a56 56 0 0 1-41-17.89l50.62-50.62 16.38 16.38L75.62 146A55.52 55.52 0 0 0 96 152z" fill="#34A853"/></svg>-->
       </div>
       <div class="float-icon icon-pi">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
@@ -78,7 +84,11 @@
         <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2" fill="none"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="white" stroke-width="2" fill="none"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
       </div>
       <div class="float-icon icon-tw" style="border-radius:50%;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+          </svg>
+          <!--
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>-->
       </div>
       <div class="float-icon icon-sh" style="border-radius:14px; background: transparent; width:65px; height:65px;">
         <svg width="44" height="44" viewBox="0 0 109 124" fill="none"><path d="M74.7 14.8c-.1-.6-.6-1-1.2-1-.5 0-10.1-.2-10.1-.2s-8-7.8-8.9-8.6c-.9-.9-2.6-.6-3.3-.4-.1 0-1.7.5-4.4 1.4C44.3 2.3 41.1 0 37.2 0 28 0 23.5 11.2 22.1 16.9c-3.7 1.1-6.3 2-6.6 2.1-2 .6-2.1.7-2.4 2.6-.2 1.4-5.4 41.7-5.4 41.7L57.5 72l24.8-5.4S75.3 15.4 74.7 14.8zm-19.5-7.5c-2.1.7-4.5 1.4-7.1 2.2.2-3.1.7-6.5 2.1-9.2.8 1.7 1.7 4.1 2.5 6.3.9.3 1.7.5 2.5.7z" fill="#95BF47"/><path d="M73.5 13.8c-.5 0-10.1-.2-10.1-.2s-8-7.8-8.9-8.6c-.3-.3-.7-.5-1.1-.5v67.6l24.8-5.4S75.3 15.4 74.7 14.8c-.1-.6-.6-1-1.2-1z" fill="#5E8E3E"/><path d="M45.2 25.3L42.7 34s-2.7-1.3-6-.1c-4.8 1.5-4.8 4.9-4.8 5.7.3 3.8 10 4.6 10.6 13.4.4 7-3.7 11.7-9.7 12.1-7.2.4-10.8-3.8-10.8-3.8l1.5-6.3s3.7 2.8 6.7 2.6c1.9-.1 2.7-1.7 2.6-2.8-.4-5-8.2-4.7-8.7-12.8-.5-6.9 4.1-13.8 14-14.4 3.9-.3 5.9.7 5.9.7z" fill="white"/></svg>
@@ -114,9 +124,8 @@
         With my <strong>Google Ads expertise</strong>, your budget will reach the right audience at the right
         time—turning clicks into measurable conversions.
       </p>
-      <a href="#contact" class="hire-btn">Hire Me Today!</a>
+      <a href="https://wa.me/+8801628048539" target="_blank" class="hire-btn">Hire Me Today!</a>
     </div>
-
   </div>
 </section>
 
@@ -127,7 +136,7 @@
     <!-- Left: Intro -->
     <div class="services-intro">
       <p class="services-tag">Services</p>
-      <h2>Increase your Business Growth</h2>
+      <h2 style="line-height: 38px;color: #333333;font-weight:400 !important;">Increase your Business Growth</h2>
       <p>I have good experience in Digital marketing work including Facebook Ads, Instagram Ads &amp; Google Ads. Having 4 years+ experience in Digital marketing services. I have done Digital marketing for many similar websites to enhance business goals.</p>
 
       <div class="contact-item">
@@ -135,7 +144,7 @@
           <!-- WhatsApp icon -->
           <svg width="20" height="20" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </div>
-        <span>+880 1575606191</span>
+        <span>+880 1628-048539</span>
       </div>
 
       <div class="contact-item">
@@ -143,7 +152,7 @@
           <!-- Email icon -->
           <svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" fill="none"/></svg>
         </div>
-        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2d392e2e272a25282e39382a29292239797b7a730b2c262a222765282426">[email&#160;protected]</a></span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2d392e2e272a25282e39382a29292239797b7a730b2c262a222765282426">marketermariya563@gmail.com</a></span>
       </div>
     </div>
 
@@ -158,7 +167,7 @@
         </svg>
       </div>
       <h3>Google Ads</h3>
-      <p><em>"I specialize in Google Ads audit, optimization, and management — delivering stronger performance, maximize ROI, and measurable conversion growth."</em></p>
+      <p>"I specialize in Google Ads audit, optimization, and management — delivering stronger performance, maximize ROI, and measurable conversion growth."</p>
     </div>
 
     <!-- Card 2: Facebook Ads -->
@@ -169,7 +178,7 @@
         </svg>
       </div>
       <h3>Facebook Ads</h3>
-      <p><em>"I specialize in Facebook Ads audit, optimization, and management — helping brands achieve stronger performance, maximize ROI, and measurable growth."</em></p>
+      <p>"I specialize in Facebook Ads audit, optimization, and management — helping brands achieve stronger performance, maximize ROI, and measurable growth."</p>
     </div>
 
     <!-- Card 3: Web Analytics -->
@@ -200,18 +209,18 @@
 
 <!-- ===== ABOUT ME SECTION ===== -->
 <section class="custom-about" id="about">
-  <div class="about-inner">
-
+    <h2 style="margin-top:-50px;margin-bottom:50px;text-align:center;">Google Ads Strategist & Web Analytics Expert</h2>
+    <div class="about-inner">
     <!-- LEFT: Diamond photo collage -->
     <div class="about-left">
-      <!-- Colored background diamonds -->
-      <div class="diamond-shape d-yellow"></div>
-      <div class="diamond-shape d-orange"></div>
-      <div class="diamond-shape d-blue"></div>
-      <div class="diamond-shape d-red"></div>
+        <!-- Colored background diamonds -->
+        <div class="diamond-shape d-yellow"></div>
+        <div class="diamond-shape d-orange"></div>
+        <div class="diamond-shape d-blue"></div>
+        <div class="diamond-shape d-red"></div>
 
-      <!-- Main photo diamond -->
-      <div class="diamond-shape d-photo">
+        <!-- Main photo diamond -->
+        <div class="diamond-shape d-photo">
         <div class="d-photo-inner">
           <img src="{{ asset('assets/img/prof_about_pic.png') }}" alt="Mariya's Avatar">
           <!-- Replace src with your actual photo -->
@@ -223,7 +232,7 @@
             <polygon points="150,195 120,230 150,240 180,230" fill="#c8bfe8"/>
           </svg> -->
         </div>
-      </div>
+        </div>
     </div>
 
     <!-- RIGHT: Content -->
@@ -237,7 +246,7 @@
       <div class="about-contacts">
         <div class="about-contact-item">
           <label>Email:</label>
-          <span>potfolio78@gmail.com</span>
+          <span>marketermariya563@gmail.com</span>
         </div>
         <div class="about-contact-item">
           <label>WhatsApp:</label>
@@ -245,28 +254,84 @@
         </div>
       </div>
 
-      <a href="#contact" class="connect-btn">Let's Connect 1:1</a>
+      <a href="https://wa.me/+8801628048539" target="_blank" class="connect-btn">Let's Connect 1:1</a>
     </div>
 
   </div>
 </section>
 
 <!-- ===== SKILLS SECTION ===== -->
+<!-- ===== SKILLS SECTION ===== -->
 <section class="custom-skills" id="skills">
   <div class="skills-inner">
 
-    <!-- LEFT: Phone mockup -->
-    <div class="skills-left">
+    <!-- LEFT: Layered phones -->
+    <div class="skills-left" id="skillsLeft">
+
+      <!-- Teal circle accent -->
       <div class="teal-blob"></div>
 
-      <!-- Back green card -->
+      <!-- Phone 1: green (back-left) -->
+      <div class="phone-shell phone-green">
+        <img src="{{ asset('assets/img/home10-phone1.png') }}" alt="Analytics phone green">
+      </div>
+
+      <!-- Phone 2: dark/purple (center front) -->
+      <div class="phone-shell phone-dark">
+        <img src="{{ asset('assets/img/home10_phone2-1.png') }}" alt="Analytics phone dark">
+      </div>
+
+      <!-- Floating project card -->
+      <div class="project-card">
+        <div class="pj-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="pj-name">Project Z</div>
+        <div class="pj-title">Back End<br>Development</div>
+        <div class="pj-date">October 2020</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Skill bars -->
+    <div class="skills-right">
+      <h2>My Skills</h2>
+      <div class="skill-item">
+        <div class="skill-label">Google Ads</div>
+        <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Social Media Ads</div>
+        <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Ads Optimization</div>
+        <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">Web Analytics</div>
+        <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label">SEO Audit</div>
+        <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--
+<section class="custom-skills" id="skills">
+  <div class="skills-inner">
+    <div class="skills-left">
+      <div class="teal-blob"></div>
       <div class="back-card">
         <div class="bc-name">Mariya Ahmed</div>
         <div class="bc-sub">Digital Marketer</div>
         <div class="bc-stars">★★★★★</div>
       </div>
-
-      <!-- Phone -->
       <div class="phone-mockup">
         <div class="phone-frame">
           <div class="phone-notch"></div>
@@ -311,8 +376,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Floating project card -->
       <div class="project-card">
         <div class="pj-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" fill="none"/></svg>
@@ -322,8 +385,6 @@
         <div class="pj-date">Feb 2026</div>
       </div>
     </div>
-
-    <!-- RIGHT: Skill bars -->
     <div class="skills-right">
       <h2>My Skills</h2>
 
@@ -351,6 +412,7 @@
 
   </div>
 </section>
+-->
 
 <!-- ===== STATS SECTION ===== -->
 <section class="custom-stats" id="stats">
@@ -365,15 +427,15 @@
       <span class="stat-label">Happy Clients</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number" data-target="235" data-suffix="+">0+</span>
+      <span class="stat-number" data-target="150" data-suffix="+">0+</span>
       <span class="stat-label">Project Completed</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number" data-target="4" data-suffix="+">0+</span>
+      <span class="stat-number" data-target="3" data-suffix="+">0+</span>
       <span class="stat-label">Years Experience</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number" data-target="4.1" data-suffix="M">0M</span>
+      <span class="stat-number" data-target="90" data-suffix="K">0K$</span>
       <span class="stat-label">Ad Spend</span>
     </div>
   </div>
@@ -612,7 +674,7 @@
   <div class="carousel-dots" id="carouselDots"></div>
 
   <!-- CTA -->
-  <a href="#contact" class="portfolio-hire-btn">Hire Me Today!</a>
+  <a target="_blank" href="https://wa.me/+8801628048539" class="portfolio-hire-btn">Hire Me Today!</a>
 </section>
 
 <!-- ===== WHY CHOOSE ME SECTION ===== -->
@@ -957,8 +1019,7 @@
         </div>
         <div class="footer-contact-text">
           <span class="fc-label">E-mail</span>
-          <span class="fc-value">potfolio78@gmail.com</span>
-        </div>
+          <span class="fc-value">marketermariya563@gmail.com
       </div>
     </div>
 
@@ -974,11 +1035,11 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Typewriter Animation
   const words = [
-    "Shopify Expert",
-    "Digital Marketer",
-    "Google Ads Specialist",
+    "Web Analytics Expert",
+    "Google Ads Expert",
     "Facebook Ads Expert",
-    "Conversion Tracker"
+    "Social Media Ads Expert",
+    "Shopify Expert",
   ];
 
   let wordIndex = 0;
