@@ -1,0 +1,24 @@
+# Local development stack: one container running Apache + PHP 8.2 + Composer.
+# Variables like ${APP_PORT} are read from ./.env (Laravel's env file).
+services:
+  app:
+    build:
+      context: .
+      args:
+        # Set UID/GID in .env if your host user isn't 1000:1000 (check with `id -u` / `id -g`).
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    ports:
+      - "${APP_PORT:-8000}:80"
+    volumes:
+      # Bind-mount the project so code edits are live without a rebuild.
+      - .:/var/www/html
+    networks:
+      - default
+      - global-db-network
+
+networks:
+  # Pre-existing shared network where `global-mariadb` and `global-redis` live,
+  # so those container names resolve from inside the app container.
+  global-db-network:
+    external: true

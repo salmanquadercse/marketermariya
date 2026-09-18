@@ -97,7 +97,8 @@
       <!-- Avatar Circle -->
       <div class="hero-avatar-circle">
         <div class="hero-avatar-circle">
-          <img src="{{ asset('assets/img/prof_about_pic.png') }}" alt="Mariya's Avatar">
+          <!-- <img src="{{ asset('assets/img/prof_about_pic.png') }}" alt="Mariya's Avatar"> -->
+          <img src="{{ asset('assets/img/marketermariya-pic-1.png') }}" alt="Mariya's Avatar">
         </div>
         <!-- Replace with your actual image: <img src="your-photo.jpg" alt="Mariya"> -->
         <!-- <svg width="220" height="260" viewBox="0 0 220 260" fill="none">
@@ -415,6 +416,7 @@
 -->
 
 <!-- ===== STATS SECTION ===== -->
+@if ($stats->isNotEmpty())
 <section class="custom-stats" id="stats">
   <span class="stats-deco sd1">+</span>
   <span class="stats-deco sd2">✕</span>
@@ -422,24 +424,15 @@
   <h2 class="stats-title">My Completed Projects</h2>
 
   <div class="stats-grid">
+    @foreach ($stats as $stat)
     <div class="stat-card">
-      <span class="stat-number" data-target="85" data-suffix="+">0+</span>
-      <span class="stat-label">Happy Clients</span>
+      <span class="stat-number" data-target="{{ $stat->display_value }}" data-suffix="{{ $stat->suffix }}">0{{ $stat->suffix }}</span>
+      <span class="stat-label">{{ $stat->label }}</span>
     </div>
-    <div class="stat-card">
-      <span class="stat-number" data-target="150" data-suffix="+">0+</span>
-      <span class="stat-label">Project Completed</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number" data-target="3" data-suffix="+">0+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number" data-target="90" data-suffix="K">0K$</span>
-      <span class="stat-label">Ad Spend</span>
-    </div>
+    @endforeach
   </div>
 </section>
+@endif
 
 <!-- ===== CREATIVE WORKS SECTION ===== -->
 <section class="custom-portfolio" id="portfolio">
@@ -451,221 +444,17 @@
 
     <div class="carousel-track" id="carouselTrack">
 
-      <!-- Slide 1: GTM Debug View -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="slide-placeholder">
-            <div class="sp-header">
-              <div class="sp-dot" style="background:#ff5f57"></div>
-              <div class="sp-dot" style="background:#febc2e"></div>
-              <div class="sp-dot" style="background:#28c840"></div>
-              <div class="sp-url"></div>
-            </div>
-            <div class="sp-body">
-              <div style="font-size:9px;font-weight:700;color:#1a1a2e;margin-bottom:8px;">The Dental Shaman - Tag Debug</div>
-              <table class="sp-table">
-                <tr><th>Event</th><th>Status</th><th>Setup</th></tr>
-                <tr><td>View content</td><td><span class="sp-badge green">Processed</span></td><td>Browser</td></tr>
-                <tr><td>View content</td><td><span class="sp-badge green">Processed</span></td><td>Server</td></tr>
-                <tr><td>PageView</td><td><span class="sp-badge blue">Deduplicated</span></td><td>Server</td></tr>
-                <tr><td>user_engagement</td><td><span class="sp-badge green">Processed</span></td><td>Server</td></tr>
-                <tr><td>PageView</td><td><span class="sp-badge green">Processed</span></td><td>Browser</td></tr>
-                <tr><td>PageView</td><td><span class="sp-badge blue">Deduplicated</span></td><td>Server</td></tr>
-                <tr><td>user_engagement</td><td><span class="sp-badge green">Processed</span></td><td>Server</td></tr>
-                <tr><td>PageView</td><td><span class="sp-badge green">Processed</span></td><td>Browser</td></tr>
-                <tr><td>PageView</td><td><span class="sp-badge blue">Deduplicated</span></td><td>Server</td></tr>
-              </table>
-            </div>
+      @forelse ($works as $work)
+        <div class="carousel-slide">
+          <div class="slide-inner">
+            <a href="{{ $work->image_url }}" target="_blank" rel="noopener" style="display:block;height:100%">
+              <img src="{{ $work->image_url }}" alt="{{ $work->title }}" loading="lazy">
+            </a>
           </div>
         </div>
-      </div>
-
-      <!-- Slide 2: GTM Container Setup -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="slide-placeholder">
-            <div class="sp-gtm-header">
-              <div class="gtm-icon"></div>
-              <span>GTM Container — Server Side Tracking</span>
-            </div>
-            <div style="padding:10px 12px;">
-              <div style="font-size:8px;color:#666;margin-bottom:6px;">Container: <strong>GTM-K98FCNL</strong> &nbsp; Version: Preview</div>
-              <div class="sp-row dark" style="margin-bottom:8px;border-radius:6px;display:flex;align-items:center;padding:0 8px;">
-                <span style="color:#fff;font-size:8px;font-weight:600;">Variables &nbsp;|&nbsp; Data Layer &nbsp;|&nbsp; Consent</span>
-              </div>
-              <div class="sp-tag-row">
-                <div class="sp-tag">FB-Purchase-Tag</div>
-                <div class="sp-tag">GA4-SST: Viewcontent</div>
-                <div class="sp-tag">FB-Add to cart Tag</div>
-                <div class="sp-tag">FB base code</div>
-                <div class="sp-tag">FB-Checkout-Tag</div>
-                <div class="sp-tag">GA4-SST: add to cart</div>
-                <div class="sp-tag">GA4-Config Tag</div>
-                <div class="sp-tag">Google Tag</div>
-              </div>
-              <div style="margin-top:10px;">
-                <div class="sp-row medium" style="height:8px;"></div>
-                <div class="sp-row short" style="height:8px;"></div>
-                <div class="sp-row" style="height:8px;width:90%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3: Shopify Analytics Dashboard -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="sp-analytics">
-            <div class="sp-analytics-header">
-              <span style="font-size:8px;color:#999;"><span class="live-dot"></span>0 live visitors</span>
-              <span style="font-size:8px;color:#333;font-weight:600;">Shopify Analytics</span>
-            </div>
-            <div class="sp-metrics">
-              <div class="sp-metric">
-                <div class="m-val">$10,689</div>
-                <div class="m-chg">↑ 1.1K%</div>
-                <div class="m-lbl">Total Sales</div>
-              </div>
-              <div class="sp-metric">
-                <div class="m-val">187</div>
-                <div class="m-chg">↑ 648%</div>
-                <div class="m-lbl">Orders</div>
-              </div>
-              <div class="sp-metric">
-                <div class="m-val">0.71%</div>
-                <div class="m-chg" style="color:#ff6b35;">→</div>
-                <div class="m-lbl">Conv. Rate</div>
-              </div>
-            </div>
-            <div class="sp-chart-area">
-              <svg class="sparkline" viewBox="0 0 260 70" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#4dd9c0" stop-opacity="0.3"/>
-                    <stop offset="100%" stop-color="#4dd9c0" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,60 C20,58 40,55 60,50 C80,45 90,40 110,30 C130,20 140,25 160,20 C180,15 200,22 220,18 C240,14 250,16 260,12" fill="none" stroke="#4dd9c0" stroke-width="2.5"/>
-                <path d="M0,60 C20,58 40,55 60,50 C80,45 90,40 110,30 C130,20 140,25 160,20 C180,15 200,22 220,18 C240,14 250,16 260,12 L260,70 L0,70 Z" fill="url(#lineGrad)"/>
-                <!-- Comparison line -->
-                <path d="M0,65 C30,63 60,62 90,61 C120,60 150,59 180,58 C210,57 240,56 260,55" fill="none" stroke="#4dd9c0" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-              </svg>
-              <div style="display:flex;gap:14px;justify-content:center;margin-top:4px;">
-                <span style="font-size:7px;color:#999;"><span style="display:inline-block;width:10px;height:2px;background:#4dd9c0;vertical-align:middle;margin-right:3px;"></span>Nov 3–Dec 3, 2025</span>
-                <span style="font-size:7px;color:#999;"><span style="display:inline-block;width:10px;height:2px;background:#4dd9c0;vertical-align:middle;margin-right:3px;border-top:2px dashed #4dd9c0;background:none;"></span>Oct 3–Nov 2, 2025</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 4: Facebook Ads Manager -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="slide-placeholder">
-            <div class="sp-header">
-              <div class="sp-dot" style="background:#ff5f57"></div>
-              <div class="sp-dot" style="background:#febc2e"></div>
-              <div class="sp-dot" style="background:#28c840"></div>
-              <div class="sp-url"></div>
-            </div>
-            <div class="sp-body">
-              <div style="font-size:9px;font-weight:700;color:#1877F2;margin-bottom:8px;">Facebook Ads Manager</div>
-              <table class="sp-table">
-                <tr><th>Campaign</th><th>Results</th><th>ROAS</th><th>Status</th></tr>
-                <tr><td>Purchase-Retarget</td><td>142</td><td>4.2x</td><td><span class="sp-badge green">Active</span></td></tr>
-                <tr><td>Cold-Audience</td><td>89</td><td>2.8x</td><td><span class="sp-badge green">Active</span></td></tr>
-                <tr><td>Lookalike-30d</td><td>63</td><td>3.5x</td><td><span class="sp-badge blue">Learning</span></td></tr>
-                <tr><td>DPA-Catalog</td><td>211</td><td>5.1x</td><td><span class="sp-badge green">Active</span></td></tr>
-                <tr><td>Lead-Gen</td><td>54</td><td>—</td><td><span class="sp-badge orange">Paused</span></td></tr>
-              </table>
-              <div style="margin-top:8px;display:flex;gap:8px;">
-                <div style="flex:1;background:#e3f2fd;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:12px;font-weight:700;color:#1877F2;">$4.1M</div>
-                  <div style="font-size:7px;color:#666;">Total Spend</div>
-                </div>
-                <div style="flex:1;background:#e8f5e9;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:12px;font-weight:700;color:#43a047;">559</div>
-                  <div style="font-size:7px;color:#666;">Conversions</div>
-                </div>
-                <div style="flex:1;background:#fff3e0;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:12px;font-weight:700;color:#ff6b35;">3.9x</div>
-                  <div style="font-size:7px;color:#666;">Avg ROAS</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 5: Google Ads Dashboard -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="slide-placeholder">
-            <div class="sp-header">
-              <div class="sp-dot" style="background:#ff5f57"></div>
-              <div class="sp-dot" style="background:#febc2e"></div>
-              <div class="sp-dot" style="background:#28c840"></div>
-              <div class="sp-url"></div>
-            </div>
-            <div class="sp-body">
-              <div style="font-size:9px;font-weight:700;color:#4285F4;margin-bottom:8px;">Google Ads — Campaign Overview</div>
-              <table class="sp-table">
-                <tr><th>Campaign</th><th>Clicks</th><th>Conv.</th><th>CPA</th></tr>
-                <tr><td>Search-Brand</td><td>1.2K</td><td>98</td><td>$8.40</td></tr>
-                <tr><td>Shopping-All</td><td>3.4K</td><td>214</td><td>$6.20</td></tr>
-                <tr><td>PMAX-Retarget</td><td>2.1K</td><td>176</td><td>$7.10</td></tr>
-                <tr><td>Display-Aware</td><td>8.7K</td><td>43</td><td>$18.50</td></tr>
-              </table>
-              <div style="margin-top:8px;">
-                <div style="font-size:8px;font-weight:600;color:#555;margin-bottom:4px;">Conversion Rate Trend</div>
-                <svg viewBox="0 0 220 40" width="100%" height="40">
-                  <path d="M0,35 C30,30 50,25 80,18 C110,12 140,15 170,10 C190,7 210,8 220,6" fill="none" stroke="#4285F4" stroke-width="2"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 6: GA4 Report -->
-      <div class="carousel-slide">
-        <div class="slide-inner">
-          <div class="slide-placeholder">
-            <div class="sp-header">
-              <div class="sp-dot" style="background:#ff5f57"></div>
-              <div class="sp-dot" style="background:#febc2e"></div>
-              <div class="sp-dot" style="background:#28c840"></div>
-              <div class="sp-url"></div>
-            </div>
-            <div class="sp-body">
-              <div style="font-size:9px;font-weight:700;color:#E37400;margin-bottom:8px;">Google Analytics 4 — Acquisition</div>
-              <div style="display:flex;gap:6px;margin-bottom:8px;">
-                <div style="flex:1;background:#fff8e1;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:13px;font-weight:700;color:#E37400;">24.6K</div>
-                  <div style="font-size:7px;color:#888;">Users</div>
-                </div>
-                <div style="flex:1;background:#f3e5f5;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:13px;font-weight:700;color:#8e24aa;">38.2K</div>
-                  <div style="font-size:7px;color:#888;">Sessions</div>
-                </div>
-                <div style="flex:1;background:#e8f5e9;border-radius:6px;padding:6px;text-align:center;">
-                  <div style="font-size:13px;font-weight:700;color:#43a047;">3.8%</div>
-                  <div style="font-size:7px;color:#888;">Conv. Rate</div>
-                </div>
-              </div>
-              <table class="sp-table">
-                <tr><th>Channel</th><th>Users</th><th>Conv.</th></tr>
-                <tr><td>Paid Search</td><td>9,240</td><td>312</td></tr>
-                <tr><td>Organic</td><td>6,810</td><td>198</td></tr>
-                <tr><td>Social</td><td>4,320</td><td>145</td></tr>
-                <tr><td>Direct</td><td>4,230</td><td>280</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+      @empty
+        @include('partials.creative-works-placeholders')
+      @endforelse
 
     </div><!-- end track -->
   </div><!-- end carousel-outer -->
@@ -760,88 +549,66 @@
 </section>
 
 <!-- ===== TESTIMONIALS SECTION ===== -->
+@if ($testimonials->isNotEmpty())
+@php($testiAverage = round($testimonials->avg('rating'), 1))
 <section class="custom-testimonials" id="testimonials">
   <div class="testimonials-inner">
 
     <!-- LEFT -->
     <div class="testi-left">
+      <span class="testi-quote-deco" aria-hidden="true">&rdquo;</span>
       <span class="testi-tag">Testimonials</span>
       <h2>What Our Clients Say</h2>
-      <p>Here are share some work reviews by given my client's after getting my services.</p>
+      <p>Here are some reviews shared by my clients after receiving my services.</p>
 
-      <!-- Decorative chat bubbles -->
-      <svg class="bubble-deco" width="220" height="200" viewBox="0 0 220 200" fill="none">
-        <rect x="10" y="10" width="160" height="110" rx="18" fill="#1a1a2e"/>
-        <polygon points="40,120 70,120 55,145" fill="#1a1a2e"/>
-        <rect x="50" y="70" width="180" height="110" rx="18" fill="#1a1a2e"/>
-        <polygon points="90,180 120,180 105,200" fill="#1a1a2e"/>
-      </svg>
+      <div class="testi-summary">
+        <div class="testi-summary-score">
+          <span class="testi-summary-number">{{ number_format($testiAverage, 1) }}</span>
+          <span class="testi-summary-stars" role="img" aria-label="{{ number_format($testiAverage, 1) }} out of 5">{{ str_repeat('★', (int) round($testiAverage)) }}<span>{{ str_repeat('★', 5 - (int) round($testiAverage)) }}</span></span>
+        </div>
+        <div class="testi-summary-meta">
+          <div class="testi-avatars" aria-hidden="true">
+            @foreach ($testimonials->take(4) as $t)
+              @if ($t->avatar_url)
+                <img class="testi-avatar-mini" src="{{ $t->avatar_url }}" alt="">
+              @else
+                <span class="testi-avatar-mini" style="background: {{ $t->avatar_gradient }};">{{ $t->initial }}</span>
+              @endif
+            @endforeach
+          </div>
+          <span class="testi-summary-label">Based on {{ $testimonials->count() }} {{ Str::plural('client review', $testimonials->count()) }}</span>
+        </div>
+      </div>
+
+      <a class="testi-cta" href="https://wa.me/8801628048539" target="_blank" rel="noopener">Become the next success story <span aria-hidden="true">&rarr;</span></a>
     </div>
 
     <!-- RIGHT: Testimonial carousel -->
     <div class="testi-right">
       <div class="testi-carousel-wrap">
-        <button class="testi-nav t-prev" onclick="moveTesti(-1)">&#8592;</button>
-        <button class="testi-nav t-next" onclick="moveTesti(1)">&#8594;</button>
+        <button class="testi-nav t-prev" onclick="moveTesti(-1)" aria-label="Previous review">&#8592;</button>
+        <button class="testi-nav t-next" onclick="moveTesti(1)" aria-label="Next review">&#8594;</button>
 
         <div class="testi-track" id="testiTrack">
-
+          @foreach ($testimonials as $testimonial)
           <div class="testi-slide">
             <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
-              <p class="testi-quote">"We hired Mariya to handle our Google Ads campaigns, and the improvement was immediate. He set up professional search and display campaigns, improved our Quality Score, and significantly increased our ROI. His reporting and insights were always clear and data-driven."</p>
+              <div class="testi-stars" role="img" aria-label="{{ $testimonial->rating }} out of 5 stars">{{ str_repeat('★', $testimonial->rating) }}<span class="testi-stars-empty">{{ str_repeat('★', 5 - $testimonial->rating) }}</span></div>
+              <p class="testi-quote">&ldquo;{{ $testimonial->quote }}&rdquo;</p>
               <div class="testi-author">
-                <div class="testi-avatar">D</div>
+                @if ($testimonial->avatar_url)
+                  <img class="testi-avatar" src="{{ $testimonial->avatar_url }}" alt="{{ $testimonial->name }}">
+                @else
+                  <div class="testi-avatar" style="background: {{ $testimonial->avatar_gradient }};">{{ $testimonial->initial }}</div>
+                @endif
                 <div class="testi-author-info">
-                  <div class="name">Daniel R.</div>
-                  <div class="role">Marketing Manager</div>
+                  <div class="name">{{ $testimonial->name }}</div>
+                  @if ($testimonial->role)<div class="role">{{ $testimonial->role }}</div>@endif
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
-              <p class="testi-quote">"Mariya completely transformed our Facebook Ads strategy. He rebuilt our pixel setup, implemented server-side tracking, and our conversion data accuracy jumped dramatically. We finally know exactly what's working."</p>
-              <div class="testi-author">
-                <div class="testi-avatar" style="background: linear-gradient(135deg, #5b4fcf, #3949ab);">S</div>
-                <div class="testi-author-info">
-                  <div class="name">Sarah M.</div>
-                  <div class="role">eCommerce Store Owner</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
-              <p class="testi-quote">"Outstanding work on our GA4 and GTM setup. Mariya is thorough, communicates every step clearly, and delivered everything on time. Our analytics are finally giving us the data we need to make real business decisions."</p>
-              <div class="testi-author">
-                <div class="testi-avatar" style="background: linear-gradient(135deg, #43a047, #1b5e20);">J</div>
-                <div class="testi-author-info">
-                  <div class="name">James T.</div>
-                  <div class="role">Digital Agency Director</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-slide">
-            <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
-              <p class="testi-quote">"I hired Mariya for server-side tracking on my Shopify store and the results were incredible. My Facebook ROAS improved by over 40% just from having cleaner conversion data. Extremely knowledgeable and responsive."</p>
-              <div class="testi-author">
-                <div class="testi-avatar" style="background: linear-gradient(135deg, #e53935, #b71c1c);">A</div>
-                <div class="testi-author-info">
-                  <div class="name">Aisha K.</div>
-                  <div class="role">Shopify Store Owner</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          @endforeach
         </div>
       </div>
 
@@ -851,6 +618,7 @@
 
   </div>
 </section>
+@endif
 
 <!-- ===== CONTACT SECTION ===== -->
 <section class="custom-contact" id="contact">
@@ -1218,7 +986,8 @@
 
   // ===== TESTIMONIALS CAROUSEL =====
   const testiTrack = document.getElementById('testiTrack');
-  const testiSlides = testiTrack.querySelectorAll('.testi-slide');
+  // The section is omitted when there are no reviews, so guard everything below.
+  const testiSlides = testiTrack ? testiTrack.querySelectorAll('.testi-slide') : [];
   const testiDotsWrap = document.getElementById('testiDots');
   let testiIndex = 0;
 
@@ -1231,6 +1000,7 @@
   });
 
   function goTesti(index) {
+    if (!testiSlides.length) return;
     testiIndex = (index + testiSlides.length) % testiSlides.length;
     testiTrack.style.transform = `translateX(-${testiIndex * 100}%)`;
     testiDotsWrap.querySelectorAll('.t-dot').forEach((d, i) => {
@@ -1240,20 +1010,22 @@
 
   function moveTesti(dir) { goTesti(testiIndex + dir); }
 
-  // Auto-play
-  let testiAuto = setInterval(() => moveTesti(1), 4500);
-  testiTrack.parentElement.addEventListener('mouseenter', () => clearInterval(testiAuto));
-  testiTrack.parentElement.addEventListener('mouseleave', () => {
-    testiAuto = setInterval(() => moveTesti(1), 4500);
-  });
+  if (testiTrack) {
+    // Auto-play
+    let testiAuto = setInterval(() => moveTesti(1), 4500);
+    testiTrack.parentElement.addEventListener('mouseenter', () => clearInterval(testiAuto));
+    testiTrack.parentElement.addEventListener('mouseleave', () => {
+      testiAuto = setInterval(() => moveTesti(1), 4500);
+    });
 
-  // Touch support
-  let tStartX = 0;
-  testiTrack.addEventListener('touchstart', e => { tStartX = e.touches[0].clientX; });
-  testiTrack.addEventListener('touchend', e => {
-    const diff = tStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) moveTesti(diff > 0 ? 1 : -1);
-  });
+    // Touch support
+    let tStartX = 0;
+    testiTrack.addEventListener('touchstart', e => { tStartX = e.touches[0].clientX; });
+    testiTrack.addEventListener('touchend', e => {
+      const diff = tStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) moveTesti(diff > 0 ? 1 : -1);
+    });
+  }
 
   // Scroll reveal
   const testiEls = document.querySelectorAll('.testi-left, .testi-right');
@@ -1331,9 +1103,12 @@
   function updateActiveLink() {
     const scrollY = window.scrollY + 80;
     let current = navSections[0];
-    navSections.forEach(sec => {
-      if (sec.el && sec.el.offsetTop <= scrollY) current = sec;
-    });
+    // Walk sections in page order (not array order) so the lowest one above the fold wins.
+    [...navSections]
+      .sort((a, b) => (a.el ? a.el.offsetTop : 0) - (b.el ? b.el.offsetTop : 0))
+      .forEach(sec => {
+        if (sec.el && sec.el.offsetTop <= scrollY) current = sec;
+      });
     navSections.forEach(sec => {
       if (sec.link) sec.link.classList.remove('active');
     });
