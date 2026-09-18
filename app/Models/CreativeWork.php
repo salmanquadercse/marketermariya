@@ -15,7 +15,7 @@ class CreativeWork extends Model
     /**
      * The disk uploaded screenshots are stored on.
      */
-    public const DISK = 'public';
+    public const DISK = 'uploads';
 
     /**
      * The directory (on DISK) uploaded screenshots are stored in.

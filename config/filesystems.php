@@ -47,6 +47,17 @@ return [
             'report' => false,
         ],
 
+        // Admin uploads (screenshots, avatars). Kept inside public/ so they are served as plain
+        // static files — no storage:link symlink, which shared hosts often refuse to follow (403).
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => '/uploads',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -16,7 +16,7 @@ class Testimonial extends Model
     /**
      * The disk uploaded avatars are stored on.
      */
-    public const DISK = 'public';
+    public const DISK = 'uploads';
 
     /**
      * The directory (on DISK) uploaded avatars are stored in.

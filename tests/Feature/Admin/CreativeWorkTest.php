@@ -6,7 +6,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 beforeEach(function () {
-    Storage::fake(CreativeWork::DISK);
+    Storage::fake(CreativeWork::DISK, ['url' => config('filesystems.disks.'.CreativeWork::DISK.'.url')]);
     $this->admin = User::factory()->create();
 });
 
@@ -96,6 +96,6 @@ test('home page shows uploaded screenshots instead of placeholders', function ()
     $this->get('/')
         ->assertOk()
         ->assertSee('alt="Real screenshot"', escape: false)
-        ->assertSee('/storage/creative-works/real.png')
+        ->assertSee('/uploads/creative-works/real.png')
         ->assertDontSee('Slide 1: GTM Debug View', escape: false);
 });

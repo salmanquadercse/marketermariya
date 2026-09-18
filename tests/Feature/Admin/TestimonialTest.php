@@ -6,7 +6,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 beforeEach(function () {
-    Storage::fake(Testimonial::DISK);
+    Storage::fake(Testimonial::DISK, ['url' => config('filesystems.disks.'.Testimonial::DISK.'.url')]);
     $this->admin = User::factory()->create();
 });
 
@@ -59,7 +59,7 @@ test('admin can add a review with a photo', function () {
 
     $t = Testimonial::where('name', 'Omar S.')->sole();
     expect($t->avatar_path)->toStartWith(Testimonial::DIRECTORY.'/')
-        ->and($t->avatar_url)->toContain('/storage/'.Testimonial::DIRECTORY.'/');
+        ->and($t->avatar_url)->toContain('/uploads/'.Testimonial::DIRECTORY.'/');
     Storage::disk(Testimonial::DISK)->assertExists($t->avatar_path);
 });
 
