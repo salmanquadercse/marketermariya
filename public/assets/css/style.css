@@ -968,13 +968,17 @@
     position: relative;
     max-width: 1100px;
     margin: 0 auto 36px;
-    overflow: hidden;
   }
+
+  /* Clips the track; arrows live outside it so they are never cut off */
+  .carousel-viewport { overflow: hidden; }
 
   .carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    touch-action: pan-y; /* horizontal drags reach our pointer handlers */
+    cursor: grab;
   }
 
   /* Each slide: shows 3 at a time with center one full, sides partial */
@@ -1228,6 +1232,39 @@
     .carousel-btn.prev { left: 0; }
     .carousel-btn.next { right: 0; }
   }
+
+  /* Lightbox (native <dialog>) */
+  .work-lightbox {
+    width: 100%; height: 100%; max-width: none; max-height: none;
+    margin: 0; padding: 0; border: 0;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    color: #eee;
+    touch-action: pan-y;
+    user-select: none;
+  }
+  .work-lightbox[open] { display: flex; align-items: center; justify-content: center; }
+  .work-lightbox::backdrop { background: rgba(0,0,0,0.8); }
+  /* 80%-wide stage; every image fills its full width (tall ones scroll inside it) */
+  .lb-stage { width: 80%; max-height: 90vh; overflow-y: auto; }
+  .work-lightbox img {
+    display: block;
+    width: 100%; height: auto;
+    cursor: grab;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  }
+  .work-lightbox .carousel-btn.prev { left: 16px; }
+  .work-lightbox .carousel-btn.next { right: 16px; }
+  .lb-close {
+    position: absolute; top: 8px; right: 16px;
+    background: none; border: 0; color: #eee;
+    font-size: 40px; line-height: 1; cursor: pointer;
+  }
+  .lb-close:hover { color: #ff6b35; }
+  .lb-counter { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); font-size: 14px; }
+  .lb-title { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font-size: 14px; padding: 0 60px; }
+  body:has(.work-lightbox[open]) { overflow: hidden; }
 
   /* ===== WHY CHOOSE ME SECTION ===== */
   .custom-why {

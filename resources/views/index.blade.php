@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariya Hero Section</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ filemtime(public_path('assets/css/style.css')) }}"/>
 </head>
 <body>
 
@@ -442,12 +442,13 @@
     <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8592;</button>
     <button class="carousel-btn next" onclick="moveCarousel(1)">&#8594;</button>
 
+    <div class="carousel-viewport">
     <div class="carousel-track" id="carouselTrack">
 
       @forelse ($works as $work)
         <div class="carousel-slide">
           <div class="slide-inner">
-            <a href="{{ $work->image_url }}" target="_blank" rel="noopener" style="display:block;height:100%">
+            <a href="{{ $work->image_url }}" class="work-link" target="_blank" rel="noopener" style="display:block;height:100%">
               <img src="{{ $work->image_url }}" alt="{{ $work->title }}" loading="lazy">
             </a>
           </div>
@@ -457,6 +458,7 @@
       @endforelse
 
     </div><!-- end track -->
+    </div><!-- end viewport -->
   </div><!-- end carousel-outer -->
 
   <!-- Dots -->
@@ -464,6 +466,18 @@
 
   <!-- CTA -->
   <a target="_blank" href="https://wa.me/+8801628048539" class="portfolio-hire-btn">Hire Me Today!</a>
+
+  <!-- Lightbox: click a work to view it full-size and slide through the rest -->
+  <dialog class="work-lightbox" id="workLightbox">
+    <button type="button" class="lb-close" onclick="lightbox.close()" aria-label="Close">&times;</button>
+    <span class="lb-counter" id="lbCounter"></span>
+    <button type="button" class="carousel-btn prev" onclick="showWork(lbIndex - 1)" aria-label="Previous">&#8592;</button>
+    <button type="button" class="carousel-btn next" onclick="showWork(lbIndex + 1)" aria-label="Next">&#8594;</button>
+    <div class="lb-stage">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lb-title" id="lbTitle"></div>
+  </dialog>
 </section>
 
 <!-- ===== WHY CHOOSE ME SECTION ===== -->
@@ -960,18 +974,62 @@
 
   // Auto-play
   let autoPlay = setInterval(() => moveCarousel(1), 3500);
-  track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  track.parentElement.addEventListener('mouseleave', () => {
+  const outer = track.closest('.carousel-outer');
+  outer.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  outer.addEventListener('mouseleave', () => {
     autoPlay = setInterval(() => moveCarousel(1), 3500);
   });
 
-  // Touch/swipe support
-  let touchStartX = 0;
-  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-  track.addEventListener('touchend', e => {
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) moveCarousel(diff > 0 ? 1 : -1);
+  // Swipe / mouse-drag: fn(dir) after a horizontal drag > 50px. Sets el.dragged so the
+  // click that follows a drag can be ignored; cleared on the next tick (click fires before it).
+  function onSwipe(el, fn) {
+    let x0 = null;
+    el.addEventListener('pointerdown', e => { x0 = e.clientX; });
+    document.addEventListener('pointerup', e => {
+      if (x0 === null) return;
+      const diff = x0 - e.clientX;
+      x0 = null;
+      el.dragged = Math.abs(diff) > 50;
+      if (el.dragged) fn(diff > 0 ? 1 : -1);
+      setTimeout(() => { el.dragged = false; });
+    });
+  }
+  onSwipe(track, moveCarousel);
+  // Native link/image drag would swallow the pointer events
+  document.getElementById('portfolio').addEventListener('dragstart', e => e.preventDefault());
+
+  // ===== WORK LIGHTBOX =====
+  const lightbox = document.getElementById('workLightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCounter = document.getElementById('lbCounter');
+  const lbTitle = document.getElementById('lbTitle');
+  const workLinks = [...track.querySelectorAll('a.work-link')];
+  let lbIndex = 0;
+
+  function showWork(i) {
+    lbIndex = (i + workLinks.length) % workLinks.length; // wraps around like the main carousel
+    const link = workLinks[lbIndex];
+    lbImg.src = link.href;
+    lbImg.alt = lbTitle.textContent = link.querySelector('img').alt;
+    lbCounter.textContent = `${lbIndex + 1} / ${workLinks.length}`;
+  }
+
+  track.addEventListener('click', e => {
+    const link = e.target.closest('a.work-link');
+    if (!link) return;
+    e.preventDefault();
+    if (track.dragged) return;
+    showWork(workLinks.indexOf(link));
+    lightbox.showModal();
   });
+
+  // Backdrop click closes (Esc is handled natively by <dialog>)
+  lightbox.addEventListener('click', e => { if (e.target === lightbox && !lightbox.dragged) lightbox.close(); });
+  lightbox.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') showWork(lbIndex + 1);
+    if (e.key === 'ArrowLeft') showWork(lbIndex - 1);
+  });
+  onSwipe(lightbox, dir => showWork(lbIndex + dir));
 
   // Why Choose Me scroll animation
   const whyEls = document.querySelectorAll('.why-left, .why-right');
